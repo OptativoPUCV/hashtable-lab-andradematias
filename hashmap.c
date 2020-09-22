@@ -50,19 +50,13 @@ void insertMap(HashMap * map, char * key, void * value) {
   i = hash(key, map->capacity);
   while (map->buckets[i] != NULL)
   {
-    if (map->buckets[i]->key == NULL)
-    {
-      break;
-    }
-    if (i == map->capacity-1)
-    {
-      i = 0;
-    }
+    if (map->buckets[i]->key == NULL) break;
+    if (i == map->capacity-1) i = 0;
     i++;
   }
+  map->buckets[i] = dato;
   map->size++;
-  map->current = i;
-  map->buckets[i] = dato;  
+  map->current = i;  
 }
 
 void enlarge(HashMap * map) {
