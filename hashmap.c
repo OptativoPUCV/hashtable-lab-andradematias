@@ -83,12 +83,12 @@ HashMap * createMap(long capacity) {
 void eraseMap(HashMap * map,  char * key) {    
 
 
+
 }
 
 void * searchMap(HashMap * map,  char * key) {   
 
-    int i; 
-    i = hash(key, map->capacity);
+    int i = hash(key, map->capacity);
 
     while (map->buckets[i] != NULL)
     {
