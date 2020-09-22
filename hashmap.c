@@ -95,7 +95,7 @@ void * searchMap(HashMap * map,  char * key) {
       if (map->buckets[i]->key == key)
       {
         map->current = i;
-        return map->buckets[i]->value;
+        return map->buckets[i];
       }
       if (i == map->capacity-1)
       {
