@@ -50,8 +50,14 @@ void insertMap(HashMap * map, char * key, void * value) {
   i = hash(key, map->capacity);
   while (map->buckets[i] != NULL)
   {
-    if (map->buckets[i]->key == NULL) break;
-    if (i == map->capacity) i = 0;
+    if (map->buckets[i]->key == NULL)
+    {
+      break;
+    }
+    if (i == map->capacity)
+    {
+      i = 0;
+    }
     i++;
   }
   map->size++;
