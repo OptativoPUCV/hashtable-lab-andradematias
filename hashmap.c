@@ -119,7 +119,7 @@ void * firstMap(HashMap * map) {
 
   map->current = 0;
 
-  for (int i = map->current ; i<map->capacity ; i++)
+  for (int i = map->current ; i<=map->capacity-1 ; i++)
   {
     if (map->buckets[i] != NULL) return map->buckets[i]->value;
   }
