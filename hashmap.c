@@ -90,7 +90,7 @@ void * searchMap(HashMap * map,  char * key) {
     int i; 
     i = hash(key, map->capacity);
 
-    while (map->buckets[i] != NULL)
+    while (map->buckets[i]->value != NULL && map->buckets[i]->key != NULL)
     {
       if (map->buckets[i]->key == key)
       {
