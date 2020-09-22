@@ -289,3 +289,9 @@ Tue Sep 22 23:48:30 UTC 2020:
  tests:  12|2
 total_score: 50/70
 534ff72
+Tue Sep 22 23:48:50 UTC 2020: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+ tests:  13|2
+total_score: 50/70
+fa90b08
