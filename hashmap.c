@@ -50,7 +50,10 @@ void insertMap(HashMap * map, char * key, void * value) {
   i = hash(key, map->capacity);
   while (map->buckets[i] != NULL)
   {
-    if (map->buckets[i]->key == NULL) break;
+    if (map->buckets[i]->key == NULL)
+    {
+      break;
+    }
     i++;
   }
   map->buckets[i] = dato;
