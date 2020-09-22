@@ -53,6 +53,8 @@ void insertMap(HashMap * map, char * key, void * value) {
     i++;
   }
   map->buckets[i] = dato;
+  map->size++;
+  map->current = i;
 }
 
 void enlarge(HashMap * map) {
