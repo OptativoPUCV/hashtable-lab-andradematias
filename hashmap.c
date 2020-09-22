@@ -89,17 +89,24 @@ void * searchMap(HashMap * map,  char * key) {
 
     int i = hash(key, map->capacity);
 
-    while(map->buckets[i] != NULL)
+    if (map->buckets[i]->key == key)
     {
-      if(map->buckets[i]->key == key)
-      {
-        map->current = i;
-        return map->buckets[i]->value;
-      }
-      if (i == map->capacity-1) i = 0;
-      i++;
+      map->current = i;
+      return map->buckets[i]->value;   
     }
-    
+    else
+    {
+      while (map->buckets[i] != NULL)
+      {
+        if (map->buckets[i]->key == key)
+        {
+          map->current = i;
+          return map->buckets[i]->value;
+        }
+        if (i == map->capacity-1) i = 0;
+        i++;
+      }
+    }    
     map->current = i;    
     return NULL;
 }
