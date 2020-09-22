@@ -132,5 +132,16 @@ void * firstMap(HashMap * map) {
 
 void * nextMap(HashMap * map) {
 
+  int i;
+
+  for (i = map->current ; i < map->capacity ; i++)
+  {
+    if (map->buckets[i+1] != NULL && map->buckets[i+1]->value != NULL && map->buckets[i+1]->key != NULL) 
+    {
+      map->current = i+1;
+      return map->buckets[i+1]->value;
+    }
+  }
+
     return NULL;
 }
