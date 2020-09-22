@@ -90,9 +90,9 @@ void * searchMap(HashMap * map,  char * key) {
     int i; 
     i = hash(key, map->capacity);
 
-    while (map->buckets[i]->value != NULL && map->buckets[i]->key != NULL)
+    while (map->buckets[i] != NULL)
     {
-      if (map->buckets[i]->key == key)
+      if (strncmp(map->buckets[i]->key, key, 20) == 0)
       {
         map->current = i;
         return map->buckets[i]->value;
