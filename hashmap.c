@@ -82,8 +82,19 @@ HashMap * createMap(long capacity) {
 
 void eraseMap(HashMap * map,  char * key) {    
 
+  int i = hash(key, map->capacity);
 
-
+  while (map->buckets[i] != NULL)
+  {
+    if (strncmp(map->buckets[i]->key, key, 20) == 0)
+    {
+      map->current = i;
+      map->size--;
+      map->buckets[i]->key = NULL;
+    }
+    if (i == map->capacity-1) i = 0;      
+    i++;
+  }
 }
 
 void * searchMap(HashMap * map,  char * key) {   
