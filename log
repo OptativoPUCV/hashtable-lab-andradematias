@@ -48,3 +48,9 @@ a.out: malloc.c:2401: sysmalloc: Assertion `(old_top == initial_top (av) && old_
  tests:  0|0
 a.out: malloc.c:2401: sysmalloc: Assertion `(old_top == initial_top (av) && old_size == 0) || ((unsigned long) (old_size) >= MINSIZE && prev_inuse (old_top) && ((unsigned long) old_end & (pagesize - 1)) == 0)' failed.
 99a99b6
+Tue Sep 22 13:06:30 UTC 2020: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  1|5
+total_score: 10/70
+d804ba1
