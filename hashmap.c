@@ -125,6 +125,7 @@ void * firstMap(HashMap * map) {
     {
       return map->buckets[map->current]->value;
     }
+    if (map->current == map->capacity-1) map->current = 0; 
     map->current++;
   }      
   
