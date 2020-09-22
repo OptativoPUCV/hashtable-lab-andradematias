@@ -120,8 +120,7 @@ void * firstMap(HashMap * map) {
   map->current = 0;
 
   while (map->buckets[map->current] != NULL)
-  {
-    if (map->current == map->capacity-1) map->current = 0; 
+  {    
     if (map->buckets[map->current] != NULL)
     {
       return map->buckets[map->current]->value;
